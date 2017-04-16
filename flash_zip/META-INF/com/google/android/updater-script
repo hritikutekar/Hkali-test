@@ -1,6 +1,6 @@
 ui_print("Mod     : FireKernel");
 ui_print("Version : v9");
-ui_print("Device  : G3, G3-TE, E2, X-Play");
+ui_print("Device  : G3, G3-TE, E2, X-Play, G4-Play");
 assert(getprop("ro.product.device") == "surnia" ||
        getprop("ro.product.device") == "surnia_umts" ||
        getprop("ro.product.device") == "surnia_uds" ||
@@ -14,7 +14,8 @@ assert(getprop("ro.product.device") == "surnia" ||
        getprop("ro.product.device") == "osprey_udstv" ||
        getprop("ro.product.device") == "merlin" ||
        getprop("ro.product.device") == "lux" ||
-       abort("This package is for device: surnia,osprey,merlin,lux; this device is " +
+       getprop("ro.product.device") == "harpia" ||
+       abort("This package is for device: surnia,osprey,merlin,lux,harpia; this device is " +
              getprop("ro.product.device") + "."););
 
 ui_print("Status  : Extracting flashing tools");
